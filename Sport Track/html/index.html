@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Track</title>
+  <link rel="stylesheet" href="../css/style_index.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Bienvenue sur Sport Track</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="upload.html">Activités</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <button id="burgerButton">Compte</button>
+          <ul id="burgerMenu">
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Suivez vos performances sportives</h2>
+      <p>
+        Sport Track est une plateforme qui vous permet de suivre et améliorer
+        vos performances dans divers sports.
+      </p>
+      <button onclick="location.href='upload.html'">Commencer</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Sport Track. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menu = document.getElementById("burgerMenu");
+      menu.style.display = "none";
+
+      document
+        .getElementById("burgerButton")
+        .addEventListener("click", function () {
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+    });
+  </script>
+</body>
+
+</html>

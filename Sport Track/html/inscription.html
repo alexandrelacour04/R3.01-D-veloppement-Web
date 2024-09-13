@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Inscription</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_connexion.css" />
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="upload.html">Activités</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="connexion.html">Connexion</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form class="form">
+    <p class="title">Inscription</p>
+    <p class="message">
+      Inscrivez-vous maintenant et obtenez un accès complet à notre application.
+    </p>
+    <div class="flex">
+      <label>
+        <input required="" placeholder="" type="text" class="exception" />
+        <span>Prénom</span>
+      </label>
+
+      <label>
+        <input required="" placeholder="" type="text" class="exception" />
+        <span>Nom de famille</span>
+      </label>
+    </div>
+
+    <label>
+      <input required="" placeholder="" type="date" class="input" />
+      <span>Date de naissance</span>
+    </label>
+
+    <!-- sex rien homme femme-->
+    <label>
+      <select required="" class="input">
+        <option value="" disabled selected></option>
+        <option value="homme">Homme</option>
+        <option value="femme">Femme</option>
+        <option value="autre">Autre</option>
+      </select>
+      <span>Sexe</span>
+    </label>
+
+    <!-- taille -->
+    <label>
+      <input required="" placeholder="" type="number" class="input" />
+      <span>Taille (cm)</span>
+    </label>
+
+    <!-- poids -->
+    <label>
+      <input required="" placeholder="" type="number" class="input" />
+      <span>Poids (kg)</span>
+    </label>
+
+    <!-- email -->
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="email"
+        class="input"
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+      />
+      <span>Email</span>
+    </label>
+
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="password"
+        class="input"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+      />
+      <span>Mot de passe</span>
+    </label>
+
+    <!-- verifie que le mots de passe soi identique -->
+
+    <label>
+      <input
+        required=""
+        placeholder=""
+        type="password"
+        class="input"
+        id="confirm_password"
+      />
+      <span>Confirmez le mot de passe</span>
+    </label>
+    <script>
+      document.querySelector(".form").addEventListener("submit", function (e) {
+        const password = document.querySelector('input[type="password"]').value;
+        const confirmPassword =
+          document.getElementById("confirm_password").value;
+        if (password !== confirmPassword) {
+          e.preventDefault();
+          alert("Les mots de passe ne sont pas identique.");
+        }
+      });
+    </script>
+    <button class="submit">Submit</button>
+    <p class="signin">Vous avez déjà un compte? <a href="#">Se connecter</a></p>
+  </form>
+</html>

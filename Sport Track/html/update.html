@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Modifier les informations personnelles</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_connexion.css" />
+  </head>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="upload.html">Activités</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <button id="burgerButton">Compte</button>
+          <ul id="burgerMenu">
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <form class="form">
+      <p class="title">Modifier les informations de votre compte</p>
+      <p class="message">Modifiez vos informations personnelles ci-dessous.</p>
+      <div class="flex">
+        <label>
+          <input required="" placeholder="" type="text" class="exception" />
+          <span>Prénom</span>
+        </label>
+
+        <label>
+          <input required="" placeholder="" type="text" class="exception" />
+          <span>Nom de famille</span>
+        </label>
+      </div>
+
+      <label>
+        <input required="" placeholder="" type="date" class="input" />
+        <span>Date de naissance</span>
+      </label>
+
+      <!-- sexe rien homme femme-->
+      <label>
+        <select required="" class="input">
+          <option value="" disabled selected></option>
+          <option value="homme">Homme</option>
+          <option value="femme">Femme</option>
+          <option value="autre">Autre</option>
+        </select>
+        <span>Sexe</span>
+      </label>
+
+      <!-- taille -->
+      <label>
+        <input required="" placeholder="" type="number" class="input" />
+        <span>Taille (cm)</span>
+      </label>
+
+      <!-- poids -->
+      <label>
+        <input required="" placeholder="" type="number" class="input" />
+        <span>Poids (kg)</span>
+      </label>
+
+      <!-- email -->
+      <label>
+        <input required="" placeholder="" type="email" class="input" />
+        <span>Email</span>
+      </label>
+
+      <button class="submit">Enregistrer</button>
+      <p class="signin">
+        Vous souhaitez revenir à la page d'accueil? <a href="#">Accueil</a>
+      </p>
+    </form>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menu = document.getElementById("burgerMenu");
+      menu.style.display = "none";
+
+      document
+        .getElementById("burgerButton")
+        .addEventListener("click", function () {
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+    });
+  </script>
+</html>

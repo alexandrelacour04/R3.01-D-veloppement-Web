@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport Track</title>
+    <link rel="stylesheet" href="../css/style_index.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="upload.html">Activités</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <button id="burgerButton">Compte</button>
+            <ul id="burgerMenu">
+              <li><a href="inscription.html">Inscription</a></li>
+              <li><a href="connexion.html">Connexion</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Uploader vos données</h2>
+        <p>
+          Ici vous pouvez uploader vos données pour les stocker,<br />
+          analyser et comparer.
+        </p>
+        <form class="form">
+          <label>
+            <input required="" placeholder="" type="file" class="input" />
+            <span>Données</span>
+          </label>
+          <button class="submit" type="submit">Uploader</button>
+        </form>
+      </section>
+    </main>
+
+    <main>
+      <!-- Faire un tableau ou l'utilisateur peux voir ses parcours avec ses infos et les comparer avec un bouton modifier qui le renvoie vers une page update.html et un bouton pour supprimer l'entrée et lui demander si il est sur de vouloir faire ca. 
+       les infos du tableau sont au format : "time":"13:00:00","cardio_frequency":99,"latitude":47.644795,"longitude":-2.776605,"altitude":18
+       je veux que les contour du tableau soit bien marqué et visible et que les données soient centré au milieu en largeur & hauteur-->
+      <section>
+        <h2>Historique de vos activités</h2>
+        <button class="refresh" onclick="refreshData();">
+          <img
+            src="../data/img/png-transparent-brand-black-font-page-reload-icon-miscellaneous-white-text-thumbnail-removebg-preview.png"
+            alt="Refresh Icon"
+            class="refresh-icon"
+          />
+        </button>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th>Fréquence Cardiaque</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Altitude</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>13:00:00</td>
+              <td>99</td>
+              <td>47.644795</td>
+              <td>-2.776605</td>
+              <td>18</td>
+              <td>
+                <button
+                  id="buttonmodif"
+                  onclick="window.location.href='update_data.html';"
+                >
+                  Modifier
+                </button>
+                <button id="delete" onclick="return confirmDelete();">
+                  Supprimer
+                </button>
+              </td>
+            </tr>
+            <!-- Ajouter d'autres entrées ici -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Sport Track. Tous droits réservés.</p>
+    </footer>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var menu = document.getElementById("burgerMenu");
+      menu.style.display = "none";
+
+      document
+        .getElementById("burgerButton")
+        .addEventListener("click", function () {
+          menu.style.display =
+            menu.style.display === "block" ? "none" : "block";
+        });
+    });
+  </script>
+</html>
